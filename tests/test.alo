@@ -1,0 +1,3 @@
+telemetry("Hello World!")
+grid x = 42
+telemetry("x =", x)

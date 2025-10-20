@@ -1,0 +1,7 @@
+grid speed = 200
+
+circuit (speed > 180) {
+    telemetry("High speed racing!")
+} else_circuit {
+    telemetry("Moderate speed")
+}

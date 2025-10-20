@@ -1,0 +1,4 @@
+grid arr = [1, 2, 3]
+telemetry("Array:", arr)
+telemetry("First element:", arr[0])
+telemetry("Length:", length(arr))

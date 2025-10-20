@@ -1,0 +1,48 @@
+// Loop examples in Alonso
+
+telemetry("Loop Examples in Alonso")
+
+// While racing loop example
+telemetry("\n--- While Racing Loop ---")
+grid lap = 1
+grid max_laps = 3
+
+while_racing (lap <= max_laps) {
+    telemetry("Racing lap", lap)
+    lap = lap + 1
+}
+
+// For loop example using 'loop' keyword
+telemetry("\n--- Formation Loop ---")
+loop (grid i = 0; i < 5; i = i + 1) {
+    telemetry("Position", i + 1, "on the grid")
+}
+
+// Loop with break_flag and continue_race
+telemetry("\n--- Loop with Break and Continue ---")
+grid position = 1
+
+while_racing (position <= 10) {
+    circuit (position == 3) {
+        telemetry("Skipping position", position, "(pit stop)")
+        position = position + 1
+        continue_race
+    }
+    
+    circuit (position == 7) {
+        telemetry("Race stopped at position", position, "(red flag)")
+        break_flag
+    }
+    
+    telemetry("Driver at position", position, "is racing")
+    position = position + 1
+}
+
+// Formation (array) iteration
+telemetry("\n--- Formation Iteration ---")
+grid team_drivers = ["Alonso", "Ocon"]
+grid team_size = length(team_drivers)
+
+loop (grid idx = 0; idx < team_size; idx = idx + 1) {
+    telemetry("Team driver", idx + 1, ":", team_drivers[idx])
+}

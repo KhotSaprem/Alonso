@@ -1,0 +1,6 @@
+pace add(a, b) {
+    return_pit a + b
+}
+
+grid result = add(5, 3)
+telemetry("5 + 3 =", result)

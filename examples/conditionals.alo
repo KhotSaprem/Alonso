@@ -1,0 +1,64 @@
+// Conditional examples in Alonso using 'circuit' keyword
+
+telemetry("Circuit (Conditional) Examples")
+
+// Basic circuit (if) statement
+grid weather = "sunny"
+grid track_temp = 45
+
+circuit (weather == "sunny") {
+    telemetry("Perfect racing conditions!")
+} else_circuit {
+    telemetry("Challenging weather conditions")
+}
+
+// Multiple conditions
+circuit (track_temp > 50) {
+    telemetry("Track is very hot - tire degradation high")
+} else_circuit {
+    circuit (track_temp > 30) {
+        telemetry("Track temperature is optimal")
+    } else_circuit {
+        telemetry("Track is cool - good for tire longevity")
+    }
+}
+
+// Complex conditions with logical operators
+grid fuel_level = 75
+grid tire_condition = "good"
+grid position = 3
+
+circuit (fuel_level > 50 && tire_condition == "good") {
+    telemetry("Ready for aggressive racing strategy")
+} else_circuit {
+    telemetry("Need to manage resources carefully")
+}
+
+// Racing strategy based on position
+circuit (position == 1) {
+    telemetry("Leading the race - maintain pace")
+} else_circuit {
+    circuit (position <= 3) {
+        telemetry("On the podium - push for the win!")
+    } else_circuit {
+        circuit (position <= 10) {
+            telemetry("In the points - steady driving")
+        } else_circuit {
+            telemetry("Outside points - time to take risks")
+        }
+    }
+}
+
+// Safety car conditions
+grid safety_car = false
+grid gap_to_leader = 12.5
+
+circuit (!safety_car && gap_to_leader < 1.0) {
+    telemetry("DRS available - opportunity to overtake!")
+} else_circuit {
+    circuit (safety_car) {
+        telemetry("Safety car deployed - bunch up the field")
+    } else_circuit {
+        telemetry("Gap too large for DRS - focus on pace")
+    }
+}

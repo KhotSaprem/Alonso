@@ -1,0 +1,11 @@
+telemetry("Testing loops:")
+
+loop (grid i = 1; i <= 3; i = i + 1) {
+    telemetry("Lap", i)
+}
+
+grid lap = 1
+while_racing (lap <= 2) {
+    telemetry("While racing lap", lap)
+    lap = lap + 1
+}

@@ -1,0 +1,45 @@
+// Function examples in Alonso using 'pace' keyword
+
+// Define a pace (function) to calculate lap time
+pace calculate_lap_time(base_time, weather_factor) {
+    grid adjusted_time = base_time * weather_factor
+    return_pit adjusted_time
+}
+
+// Define a pace to check if a lap time is fast
+pace is_fast_lap(lap_time) {
+    circuit (lap_time < 90) {
+        return_pit true
+    } else_circuit {
+        return_pit false
+    }
+}
+
+// Define a pace to simulate a race
+pace simulate_race(laps) {
+    grid total_time = 0
+    grid current_lap = 1
+    
+    while_racing (current_lap <= laps) {
+        grid base_time = 88.5
+        grid weather = 1.1
+        grid lap_time = calculate_lap_time(base_time, weather)
+        
+        total_time = total_time + lap_time
+        
+        telemetry("Lap", current_lap, "- Time:", lap_time, "seconds")
+        
+        circuit (is_fast_lap(lap_time)) {
+            telemetry("Fast lap!")
+        }
+        
+        current_lap = current_lap + 1
+    }
+    
+    return_pit total_time
+}
+
+// Run the simulation
+telemetry("Starting race simulation...")
+grid race_time = simulate_race(5)
+telemetry("Total race time:", race_time, "seconds")

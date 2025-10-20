@@ -1,0 +1,5 @@
+grid i = 0
+while_racing (i < 3) {
+    telemetry("Lap", i)
+    i = i + 1
+}

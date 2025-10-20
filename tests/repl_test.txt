@@ -1,0 +1,5 @@
+grid x = 5
+telemetry(x)
+x = 10
+telemetry(x)
+pit

@@ -1,0 +1,21 @@
+// Hello World in Alonso - The F1 Programming Language
+telemetry("Hello from the Alonso racing circuit!")
+
+// Variable declaration using 'grid' (starting grid position)
+grid driver_name = "Fernando Alonso"
+grid car_number = 14
+grid is_racing = true
+
+telemetry("Driver:", driver_name)
+telemetry("Car Number:", car_number)
+telemetry("Racing Status:", is_racing)
+
+// Formation (array) example
+grid drivers = ["Alonso", "Hamilton", "Verstappen", "Leclerc"]
+telemetry("Drivers on grid:", drivers)
+telemetry("First driver:", drivers[0])
+telemetry("Number of drivers:", length(drivers))
+
+// Add a new driver to the formation
+grid updated_drivers = push(drivers, "Russell")
+telemetry("Updated drivers:", updated_drivers)
