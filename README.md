@@ -1,4 +1,6 @@
-# Alonso Programming Language
+# Alonso Language
+
+My attempt at learning Compiler Design by designing one myself
 
 **Alonso** is a Formula 1-themed programming language inspired by the legendary Fernando Alonso. This interpreted language transforms traditional programming concepts into exciting F1 racing metaphors, making coding feel like commanding a race car on the circuit.
 
